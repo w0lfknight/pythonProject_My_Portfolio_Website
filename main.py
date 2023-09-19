@@ -1,3 +1,4 @@
+import os
 import smtplib
 
 from flask import Flask, render_template, request
@@ -9,6 +10,7 @@ MY_EMAIL = "ajay20003kumar@gmail.com"
 MY_PASSWORD = "sddjrgqklkskdsul"
 
 app = Flask(__name__)
+app.config['SECRET_KEY'] = os.environ.get("FLASK_KEY")
 
 @app.route('/', methods=["POST", "GET"])
 def index():
