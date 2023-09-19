@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Abhay Singh Bootstrap Portfolio Template - Blog Single</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+<!--  <link href="static/assets/img/favicon.png" rel="icon">-->
+  <link href="static/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Vendor CSS Files -->
+  <link href="static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="static/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="static/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="static/assets/css/main.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: DevFolio
+  * Updated: Jul 27 2023 with Bootstrap v5.3.1
+  * Template URL: https://bootstrapmade.com/Devfolio Singh-bootstrap-portfolio-html-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body style="background-image: url(static/assets/img/maxresdefault.jpg)">
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <h1 class="logo"><a href="index1.html">Abhay Singh</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+       <a href="index1.html" class="logo"><img src="static/assets/img/logo.png" alt="" class="img-fluid"></a>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto " href="/">Home</a></li>
+<!--          <li><a class="nav-link scrollto" href="/about">About</a></li>-->
+<!--          <li><a class="nav-link scrollto" href="#services">Services</a></li>-->
+<!--          <li><a class="nav-link scrollto " href="#work">Work</a></li>-->
+          <li><a class="nav-link scrollto " href="#blog">Blog</a></li>
+          <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              {% if id == 1 %}
+              <li><a href="{{ url_for('blog', id=2) }}">Second Blog</a></li>
+<!--              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>-->
+<!--                <ul>-->
+<!--                  <li><a href="#">Deep Drop Down 1</a></li>-->
+<!--                  <li><a href="#">Deep Drop Down 2</a></li>-->
+<!--                  <li><a href="#">Deep Drop Down 3</a></li>-->
+<!--                  <li><a href="#">Deep Drop Down 4</a></li>-->
+<!--                  <li><a href="#">Deep Drop Down 5</a></li>-->
+<!--                </ul>-->
+<!--              </li>-->
+              <li><a href="{{ url_for('blog', id=3) }}">Third Blog</a></li>
+<!--              <li><a href="#">Drop Down 3</a></li>-->
+<!--              <li><a href="#">Drop Down 4</a></li>-->
+              {% elif id == 2 %}
+
+              <li><a href="{{ url_for('blog', id=1) }}">First Blog</a></li>
+<!--              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>-->
+<!--                <ul>-->
+<!--                  <li><a href="#">Deep Drop Down 1</a></li>-->
+<!--                  <li><a href="#">Deep Drop Down 2</a></li>-->
+<!--                  <li><a href="#">Deep Drop Down 3</a></li>-->
+<!--                  <li><a href="#">Deep Drop Down 4</a></li>-->
+<!--                  <li><a href="#">Deep Drop Down 5</a></li>-->
+<!--                </ul>-->
+<!--              </li>-->
+              <li><a href="{{ url_for('blog', id=3) }}">Third Blog</a></li>
+<!--              <li><a href="#">Drop Down 3</a></li>-->
+<!--              <li><a href="#">Drop Down 4</a></li>-->
+              {% else %}
+
+              <li><a href="{{ url_for('blog', id=1) }}">First Blog</a></li>
+<!--              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>-->
+<!--                <ul>-->
+<!--                  <li><a href="#">Deep Drop Down 1</a></li>-->
+<!--                  <li><a href="#">Deep Drop Down 2</a></li>-->
+<!--                  <li><a href="#">Deep Drop Down 3</a></li>-->
+<!--                  <li><a href="#">Deep Drop Down 4</a></li>-->
+<!--                  <li><a href="#">Deep Drop Down 5</a></li>-->
+<!--                </ul>-->
+<!--              </li>-->
+              <li><a href="{{ url_for('blog', id=2) }}">Second Blog</a></li>
+<!--              <li><a href="#">Drop Down 3</a></li>-->
+<!--              <li><a href="#">Drop Down 4</a></li>-->
+              {% endif %}
+            </ul>
+          </li>
+          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  {% if id == 1 %}
+
+  <div class="hero " >
+<!--    <div class="overlay-mf"></div>-->
+    <div class="hero-content display-table">
+      <div class="table-cell">
+        <div class="container">
+          <h2 class="hero-title mb-4">Blog Details</h2>
+          <ol class="breadcrumb d-flex justify-content-center">
+            <li class="breadcrumb-item">
+              <a href="/">Home</a>
+            </li>
+            <li class="breadcrumb-item">
+<!--              <a href="#">Library</a>-->
+            </li>
+            <li class="breadcrumb-item active">Data</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main id="main">
+
+    <!-- ======= Blog Single Section ======= -->
+    <section class="blog-wrapper sect-pt4" id="blog">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8">
+            <div class="post-box">
+              <div class="post-thumb">
+                <img src="static/assets/img/post-1.jpg" class="img-fluid" alt="">
+              </div>
+              <div class="post-meta">
+                <h1 class="article-title">Exploring the Hidden Gems of Italy: A Journey of Food and History</h1>
+                <ul>
+                  <li>
+                    <span class="bi bi-person"></span>
+                    <a href="https://chat.openai.com/">Jason London</a>
+                  </li>
+                  <li>
+                    <span class="bi bi-tag"></span>
+                    <a href="#">Travel</a>
+                  </li>
+                  <li>
+                    <span class="bi bi-chat-left-text"></span>
+                    <a href="#">14</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="article-content">
+
+                <p>
+        Italy, a country known for its rich history, stunning art, and world-renowned cuisine, has always been a dream destination for travelers. While places like Rome, Venice, and Florence often steal the spotlight, there's a whole world of hidden gems waiting to be explored by those willing to venture off the beaten path. Join me on a journey through some lesser-known but equally enchanting parts of Italy.
+                </p>
+                <h2>The Trulli of Alberobello</h2>
+                <p>
+                  Our first stop takes us to the picturesque town of Alberobello, located in the southern region of Puglia. Alberobello is famous for its unique trulli, traditional Apulian dry stone huts with conical roofs. These charming little houses are a sight to behold and have even been designated a UNESCO World Heritage Site.
+
+Walking through the winding streets of Alberobello feels like stepping into a fairy tale. The trulli, with their whitewashed walls and intricate symbols painted on the roofs, create a magical atmosphere. Explore the Trullo Sovrano, a two-story trullo that provides a glimpse into the history and architecture of this region.
+                </p>
+                <img src="static/assets/img/Alberobello.jpg.optimal.jpg" class="img-fluid">
+                <h2>Matera: The City of Caves</h2>
+                <p>
+                  Our journey continues to Matera, also in the region of Puglia but close to the border with Basilicata. Matera is often referred to as the "City of Caves" due to its ancient cave dwellings carved into the cliffs. These dwellings, known as "Sassi," date back to prehistoric times and are some of the oldest continuously inhabited settlements in the world.
+
+Strolling through the narrow alleys of Matera, you'll feel like you've traveled back in time. The Sassi are now home to boutique hotels, restaurants, and artisan shops, making it a unique and captivating destination. Don't miss the chance to visit the Casa Grotta di Vico Solitario, a furnished cave house that offers a glimpse into the daily life of Matera's inhabitants in the past.
+                </p>
+                <img src="static/assets/img/visit-matera-view-3.jpg " class="img-fluid">
+                <h2>Sicilian Delights in Taormina</h2>
+                <p>
+                 Our next stop is Taormina, a stunning town perched on the cliffs of the east coast of Sicily. Taormina is known for its breathtaking views of the Ionian Sea, its ancient Greek theater, and its delightful cuisine.
+
+Start your day with a visit to the ancient theater, which hosts various events and performances throughout the year. The panoramic views from the theater are simply breathtaking. Afterward, explore the charming streets of Taormina, filled with boutique shops and cafes.
+
+Sicilian cuisine is a highlight of any visit. Be sure to savor a plate of pasta alla norma, a local specialty made with eggplant and ricotta cheese. And don't leave without trying a refreshing granita, a Sicilian dessert made with crushed ice and fruit flavors.
+                </p>
+                <img src="static/assets/img/taormina.jpg" class="img-fluid">
+                <hr>
+                <blockquote class="blockquote">
+                  <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                </blockquote>
+                <hr>
+                <h2>The Enchanted Forests of Abruzzo</h2>
+                <p>
+                  Our final destination takes us to the Abruzzo region, a hidden gem for nature enthusiasts. Abruzzo is home to stunning national parks, including the Gran Sasso and Monti della Laga National Park. Here, you'll find rugged landscapes, picturesque villages, and some of Italy's most pristine wilderness.
+
+Explore the enchanting forests of Abruzzo, where you can hike, bike, or simply unwind amidst nature's beauty. The Campo Imperatore plateau, often referred to as "Little Tibet" for its unique landscape, is a must-visit spot. It's a paradise for photographers and a place to escape the crowds.
+
+Italy's hidden gems offer a chance to experience the country in a more intimate and authentic way. From the fairytale trulli of Alberobello to the ancient caves of Matera, the seaside charm of Taormina, and the natural wonders of Abruzzo, these lesser-known destinations reveal the diverse and enchanting soul of Italy. So, pack your bags and embark on a journey to discover the hidden treasures of this beautiful country. Buon viaggio!
+                </p>
+                <img src="static/assets/img/forest of abruzzo.jpg" class="img-fluid">
+
+              </div>
+            </div>
+            <div class="box-comments">
+              <div class="title-box-2">
+                <h4 class="title-comments title-left">Comments (34)</h4>
+              </div>
+              <ul class="list-comments">
+                <li>
+                  <div class="comment-avatar">
+                    <img src="static/assets/img/testimonial-2.jpg" alt="">
+                  </div>
+                  <div class="comment-details">
+                    <h4 class="comment-author">Oliver Colmenares</h4>
+                    <span>18 Sep 2017</span>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores reprehenderit, provident cumque
+                      ipsam temporibus maiores
+                      quae natus libero optio, at qui beatae ducimus placeat debitis voluptates amet corporis.
+                    </p>
+                    <a href="3">Reply</a>
+                  </div>
+                </li>
+                <li>
+                  <div class="comment-avatar">
+                    <img src="static/assets/img/testimonial-4.jpg" alt="">
+                  </div>
+                  <div class="comment-details">
+                    <h4 class="comment-author">Carmen Vegas</h4>
+                    <span>18 Sep 2017</span>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores reprehenderit, provident cumque
+                      ipsam temporibus maiores
+                      quae natus libero optio, at qui beatae ducimus placeat debitis voluptates amet corporis,
+                      veritatis deserunt.
+                    </p>
+                    <a href="3">Reply</a>
+                  </div>
+                </li>
+                <li class="comment-children">
+                  <div class="comment-avatar">
+                    <img src="static/assets/img/testimonial-2.jpg" alt="">
+                  </div>
+                  <div class="comment-details">
+                    <h4 class="comment-author">Oliver Colmenares</h4>
+                    <span>18 Sep 2017</span>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores reprehenderit, provident cumque
+                      ipsam temporibus maiores
+                      quae.
+                    </p>
+                    <a href="3">Reply</a>
+                  </div>
+                </li>
+                <li>
+                  <div class="comment-avatar">
+                    <img src="static/assets/img/testimonial-2.jpg" alt="">
+                  </div>
+                  <div class="comment-details">
+                    <h4 class="comment-author">Oliver Colmenares</h4>
+                    <span>18 Sep 2017</span>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores reprehenderit, provident cumque
+                      ipsam temporibus maiores
+                      quae natus libero optio.
+                    </p>
+                    <a href="3">Reply</a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            {% elif id == 2 %}
+            <div class="hero ">
+<!--    <div class="overlay-mf"></div>-->
+    <div class="hero-content display-table">
+      <div class="table-cell">
+        <div class="container">
+          <h2 class="hero-title mb-4">Blog Details</h2>
+          <ol class="breadcrumb d-flex justify-content-center">
+            <li class="breadcrumb-item">
+              <a href="/">Home</a>
+            </li>
+            <li class="breadcrumb-item">
+<!--              <a href="#">Library</a>-->
+            </li>
+            <li class="breadcrumb-item active">Data</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main id="main">
+
+    <!-- ======= Blog Single Section ======= -->
+    <section class="blog-wrapper sect-pt4" id="blog">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8">
+            <div class="post-box">
+              <div class="post-thumb">
+                <img src="static/assets/img/post-2.jpg" class="img-fluid" alt="">
+              </div>
+              <div class="post-meta">
+                <h1 class="article-title">The Building Blocks of Health: Exploring the World of Nutrition</h1>
+                <ul>
+                  <li>
+                    <span class="bi bi-person"></span>
+                    <a href="https://chat.openai.com/c/9414dc14-9e86-4d66-a330-620b8696b357">Jason Melbourne</a>
+                  </li>
+                  <li>
+                    <span class="bi bi-tag"></span>
+                    <a href="#">Nutrition</a>
+                  </li>
+                  <li>
+                    <span class="bi bi-chat-left-text"></span>
+                    <a href="#">14</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="article-content">
+                <h2>Introduction</h2>
+                <p>
+                  Nutrition is the cornerstone of a healthy and fulfilling life. It provides our bodies with the essential nutrients required for growth, energy, and overall well-being. The choices we make about what we eat have a profound impact on our physical and mental health. In this blog, we will dive deep into the world of nutrition, exploring the key principles, essential nutrients, and practical tips for making informed dietary choices.
+                </p>
+                <h2>Understanding the Basics</h2>
+                <p>
+                  Nutrition is the science that examines the interaction between food and the body's systems. It encompasses the study of nutrients, their sources, functions, and how they contribute to health or disease. To make informed decisions about our diet, it's crucial to grasp some fundamental concepts:
+                </p>
+                <h2>Macronutrients vs. Micronutrients:</h2>
+                <p>
+                  Our diet consists of macronutrients (carbohydrates, proteins, and fats) and micronutrients (vitamins and minerals). Macronutrients provide energy and support bodily functions, while micronutrients are essential for various biochemical processes.
+                </p>
+                <h2>Calories:</h2>
+                <p>
+                  Calories are units of energy found in food. Our bodies require a specific number of calories to function optimally, and the balance between calorie intake and expenditure determines our weight.
+                </p>
+                <hr>
+                <blockquote class="blockquote">
+                  <p class="mb-0">To maintain good health, it's crucial to understand the key nutrients our bodies need.</p>
+                </blockquote>
+                <hr>
+                <h2>Balanced Diet:</h2>
+                <p>
+                  A balanced diet includes a variety of foods from different food groups, such as fruits, vegetables, lean proteins, whole grains, and healthy fats. This ensures a wide range of nutrients for overall health.
+                </p>
+
+              </div>
+            </div>
+            <div class="box-comments">
+              <div class="title-box-2">
+                <h4 class="title-comments title-left">Comments (34)</h4>
+              </div>
+              <ul class="list-comments">
+                <li>
+                  <div class="comment-avatar">
+                    <img src="static/assets/img/testimonial-2.jpg" alt="">
+                  </div>
+                  <div class="comment-details">
+                    <h4 class="comment-author">Oliver Colmenares</h4>
+                    <span>18 Sep 2017</span>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores reprehenderit, provident cumque
+                      ipsam temporibus maiores
+                      quae natus libero optio, at qui beatae ducimus placeat debitis voluptates amet corporis.
+                    </p>
+                    <a href="3">Reply</a>
+                  </div>
+                </li>
+                <li>
+                  <div class="comment-avatar">
+                    <img src="static/assets/img/testimonial-4.jpg" alt="">
+                  </div>
+                  <div class="comment-details">
+                    <h4 class="comment-author">Carmen Vegas</h4>
+                    <span>18 Sep 2017</span>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores reprehenderit, provident cumque
+                      ipsam temporibus maiores
+                      quae natus libero optio, at qui beatae ducimus placeat debitis voluptates amet corporis,
+                      veritatis deserunt.
+                    </p>
+                    <a href="3">Reply</a>
+                  </div>
+                </li>
+                <li class="comment-children">
+                  <div class="comment-avatar">
+                    <img src="static/assets/img/testimonial-2.jpg" alt="">
+                  </div>
+                  <div class="comment-details">
+                    <h4 class="comment-author">Oliver Colmenares</h4>
+                    <span>18 Sep 2017</span>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores reprehenderit, provident cumque
+                      ipsam temporibus maiores
+                      quae.
+                    </p>
+                    <a href="3">Reply</a>
+                  </div>
+                </li>
+                <li>
+                  <div class="comment-avatar">
+                    <img src="static/assets/img/testimonial-2.jpg" alt="">
+                  </div>
+                  <div class="comment-details">
+                    <h4 class="comment-author">Oliver Colmenares</h4>
+                    <span>18 Sep 2017</span>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores reprehenderit, provident cumque
+                      ipsam temporibus maiores
+                      quae natus libero optio.
+                    </p>
+                    <a href="3">Reply</a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            {% elif id == 3 %}
+              <div class="hero " >
+<!--    <div class="overlay-mf"></div>-->
+    <div class="hero-content display-table">
+      <div class="table-cell">
+        <div class="container">
+          <h2 class="hero-title mb-4">Blog Details</h2>
+          <ol class="breadcrumb d-flex justify-content-center">
+            <li class="breadcrumb-item">
+              <a href="/">Home</a>
+            </li>
+            <li class="breadcrumb-item">
+<!--              <a href="#">Library</a>-->
+            </li>
+            <li class="breadcrumb-item active">Data</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main id="main">
+
+    <!-- ======= Blog Single Section ======= -->
+    <section class="blog-wrapper sect-pt4" id="blog">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8">
+            <div class="post-box">
+              <div class="post-thumb">
+                <img src="static/assets/img/post-1.jpg" class="img-fluid" alt="">
+              </div>
+              <div class="post-meta">
+                <h1 class="article-title">Mastering the Art of Web Design: Creating Stunning and User-Friendly Websites</h1>
+                <ul>
+                  <li>
+                    <span class="bi bi-person"></span>
+                    <a href="https://chat.openai.com/c/aa02af00-7163-4713-bcac-52f301b18282">Jason California</a>
+                  </li>
+                  <li>
+                    <span class="bi bi-tag"></span>
+                    <a href="#">Web Design</a>
+                  </li>
+                  <li>
+                    <span class="bi bi-chat-left-text"></span>
+                    <a href="#">14</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="article-content">
+                <h2>Introduction</h2>
+                <p>
+                  In today's digital age, your website is often the first point of contact between your business and potential customers. A well-designed website can make a lasting impression, drive traffic, and convert visitors into loyal clients. But what does it take to create a website that not only looks visually appealing but also functions seamlessly? This blog will delve into the world of web design, exploring key principles, best practices, and emerging trends to help you craft websites that stand out in the crowded online space.
+                </p>
+                <h2>Understand Your Audience</h2>
+                <p>
+                  Before diving into the design process, it's crucial to have a clear understanding of your target audience. Knowing their preferences, needs, and behaviors will guide your design decisions. Conduct thorough research and create user personas to represent your ideal website visitors. This step ensures that your design choices align with the expectations of your audience.
+                </p>
+                <h2>Start with a Solid Plan</h2>
+                <p>
+                  A well-thought-out plan is the foundation of any successful web design project. Begin by outlining your website's goals, functionality requirements, and content strategy. Create a sitemap to visualize the site's structure, and develop wireframes or prototypes to sketch out the layout and navigation. Having a clear plan in place will save you time and prevent costly revisions later in the process.
+                </p>
+                <h2>Prioritize User Experience (UX)</h2>
+                <p>
+                  User experience is at the heart of effective web design. Visitors should easily find what they're looking for, navigate intuitively, and enjoy a seamless browsing experience. Consider the following UX principles:
+
+a. Responsive Design: Ensure your website is responsive and adaptable to various screen sizes and devices, including mobile phones and tablets.
+b. Intuitive Navigation: Use clear, organized menus and navigation elements to guide users through your site effortlessly.
+c. Fast Loading Speed: Optimize images and minimize HTTP requests to improve loading times.
+d. Accessibility: Make your website accessible to people with disabilities by following accessibility guidelines (e.g., WCAG).
+e. Aesthetic Consistency: Maintain a consistent visual style and typography throughout the site for a polished look.
+                </p>
+                <hr>
+                <blockquote class="blockquote">
+                  <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                </blockquote>
+                <hr>
+                <h2>Focus on Visual Appeal</h2>
+                <p>
+                  Visual elements play a crucial role in web design. The aesthetics of your website can influence user perception and engagement. Here are some tips to enhance visual appeal:
+
+a. Choose a Harmonious Color Palette: Select a color scheme that reflects your brand identity and evokes the desired emotions in your audience.
+b. High-Quality Imagery: Use high-resolution images and graphics that are relevant to your content and optimized for the web.
+c. Typography: Pay attention to typography, ensuring readability and consistency across the site.
+d. White Space: Utilize white space effectively to enhance readability and draw attention to important elements.
+                </p>
+
+              </div>
+            </div>
+            <div class="box-comments">
+              <div class="title-box-2">
+                <h4 class="title-comments title-left">Comments (34)</h4>
+              </div>
+              <ul class="list-comments">
+                <li>
+                  <div class="comment-avatar">
+                    <img src="static/assets/img/testimonial-2.jpg" alt="">
+                  </div>
+                  <div class="comment-details">
+                    <h4 class="comment-author">Oliver Colmenares</h4>
+                    <span>18 Sep 2017</span>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores reprehenderit, provident cumque
+                      ipsam temporibus maiores
+                      quae natus libero optio, at qui beatae ducimus placeat debitis voluptates amet corporis.
+                    </p>
+                    <a href="3">Reply</a>
+                  </div>
+                </li>
+                <li>
+                  <div class="comment-avatar">
+                    <img src="static/assets/img/testimonial-4.jpg" alt="">
+                  </div>
+                  <div class="comment-details">
+                    <h4 class="comment-author">Carmen Vegas</h4>
+                    <span>18 Sep 2017</span>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores reprehenderit, provident cumque
+                      ipsam temporibus maiores
+                      quae natus libero optio, at qui beatae ducimus placeat debitis voluptates amet corporis,
+                      veritatis deserunt.
+                    </p>
+                    <a href="3">Reply</a>
+                  </div>
+                </li>
+                <li class="comment-children">
+                  <div class="comment-avatar">
+                    <img src="static/assets/img/testimonial-2.jpg" alt="">
+                  </div>
+                  <div class="comment-details">
+                    <h4 class="comment-author">Oliver Colmenares</h4>
+                    <span>18 Sep 2017</span>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores reprehenderit, provident cumque
+                      ipsam temporibus maiores
+                      quae.
+                    </p>
+                    <a href="3">Reply</a>
+                  </div>
+                </li>
+                <li>
+                  <div class="comment-avatar">
+                    <img src="static/assets/img/testimonial-2.jpg" alt="">
+                  </div>
+                  <div class="comment-details">
+                    <h4 class="comment-author">Oliver Colmenares</h4>
+                    <span>18 Sep 2017</span>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores reprehenderit, provident cumque
+                      ipsam temporibus maiores
+                      quae natus libero optio.
+                    </p>
+                    <a href="3">Reply</a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            {%endif%}
+
+
+            <div class="form-comments">
+              <div class="title-box-2">
+                <h3 class="title-left">
+                  Leave a Reply
+                </h3>
+              </div>
+              <form class="form-mf" action="" method="post">
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <div class="form-group">
+                      <input type="text" class="form-control input-mf" id="inputName" placeholder="Name *" name="username" required>
+                    </div>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <div class="form-group">
+                      <input type="email" class="form-control input-mf"  id="inputEmail1" placeholder="Email *" required name="email_id">
+                    </div>
+                  </div>
+                  <div class="col-md-12 mb-3">
+                    <div class="form-group">
+                      <input type="url" class="form-control input-mf" id="inputUrl" placeholder="Website" name="website" >
+                    </div>
+                  </div>
+                  <div class="col-md-12 mb-3">
+                    <div class="form-group">
+                      <textarea id="textMessage" class="form-control input-mf" placeholder="Comment *" name="message" cols="45" rows="8" required></textarea>
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <button type="" class="button button-a button-big button-rouded">Send Message</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="widget-sidebar sidebar-search">
+              <h5 class="sidebar-title">Search</h5>
+              <div class="sidebar-content">
+                <form>
+                  <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search for..." aria-label="Search for...">
+                    <span class="input-group-btn">
+                      <button class="btn btn-secondary btn-search" type="button">
+                        <span class="bi bi-search"></span>
+                      </button>
+                    </span>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="widget-sidebar">
+              <h5 class="sidebar-title">Recent Post</h5>
+              <div class="sidebar-content">
+                <ul class="list-sidebar">
+                  <li>
+                    <a href="#">Atque placeat maiores.</a>
+                  </li>
+                  <li>
+                    <a href="#">Lorem ipsum dolor sit amet consectetur</a>
+                  </li>
+                  <li>
+                    <a href="#">Nam quo autem exercitationem.</a>
+                  </li>
+                  <li>
+                    <a href="#">Atque placeat maiores nam quo autem</a>
+                  </li>
+                  <li>
+                    <a href="#">Nam quo autem exercitationem.</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="widget-sidebar">
+              <h5 class="sidebar-title">Archives</h5>
+              <div class="sidebar-content">
+                <ul class="list-sidebar">
+                  <li>
+                    <a href="#">September, 2017.</a>
+                  </li>
+                  <li>
+                    <a href="#">April, 2017.</a>
+                  </li>
+                  <li>
+                    <a href="#">Nam quo autem exercitationem.</a>
+                  </li>
+                  <li>
+                    <a href="#">Atque placeat maiores nam quo autem</a>
+                  </li>
+                  <li>
+                    <a href="#">Nam quo autem exercitationem.</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="widget-sidebar widget-tags">
+              <h5 class="sidebar-title">Tags</h5>
+              <div class="sidebar-content">
+                <ul>
+                  <li>
+                    <a href="#">Web.</a>
+                  </li>
+                  <li>
+                    <a href="#">Design.</a>
+                  </li>
+                  <li>
+                    <a href="#">Travel.</a>
+                  </li>
+                  <li>
+                    <a href="#">Photoshop</a>
+                  </li>
+                  <li>
+                    <a href="#">Corel Draw</a>
+                  </li>
+                  <li>
+                    <a href="#">JavaScript</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Blog Single Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="copyright-box">
+            <p class="copyright">&copy; Copyright <strong>Abhay Singh</strong>. All Rights Reserved</p>
+            <div class="credits">
+              <!--
+              All the links in the footer should remain intact.
+              You can delete the links only if you purchased the pro version.
+              Licensing information: https://bootstrapmade.com/license/
+              Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Abhay Singh
+            -->
+              Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer><!-- End  Footer -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="static/assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="static/assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="static/assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="static/assets/vendor/typed.js/typed.umd.js"></script>
+  <script src="static/assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="static/assets/js/main.js"></script>
+
+</body>
+
+</html>

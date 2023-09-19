@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tic Tac Toe</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        table {
+            border-collapse: collapse;
+            margin: 20px auto;
+        }
+
+        td {
+            width: 100px;
+            height: 100px;
+            text-align: center;
+            font-size: 36px;
+            font-weight: bold;
+            border: 2px solid #333;
+        }
+
+        .player-x {
+            color: #ff6347; /* Red */
+        }
+
+        .player-o {
+            color: #4169e1; /* Royal Blue */
+        }
+
+        .empty {
+            color: #808080; /* Gray */
+        }
+
+        .game-info {
+            text-align: center;
+            margin: 20px;
+        }
+
+        .message {
+            font-size: 20px;
+            font-weight: bold;
+            color: #008000; /* Dark Green */
+        }
+
+        /* Radio buttons */
+        input[type="radio"] {
+            margin-right: 5px;
+        }
+
+        label {
+            color: #333;
+            font-weight: bold;
+        }
+
+        input[type="submit"] {
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50; /* Green */
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Tic Tac Toe</h1>
+    <form action="/start_game" method="post" class="game-info">
+
+        <br>
+
+    </form>
+    <table>
+        {% for row in board %}
+        <tr>
+            {% for cell in row %}
+            <td class="{{ 'player-x' if cell == 'X' else 'player-o' if cell == 'O' else 'empty' }}">{{ cell }}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+    <form action="/play" method="post" class="game-info">
+        <label>Row: <input type="number" name="row" min="0" max="2"></label>
+        <label>Column: <input type="number" name="col" min="0" max="2"></label>
+        <input type="submit" value="Play">
+    </form>
+    <p class="message">{{ message }}</p>
+</body>
+</html>

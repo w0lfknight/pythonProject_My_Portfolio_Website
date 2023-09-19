@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Watermarking App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/watermark.css') }}">
+
+</head>
+<body>
+    <h1>Image Watermarking App</h1>
+
+    <form id="watermark-form" action="/watermark" method="POST" enctype="multipart/form-data">
+        <label for="image">Upload Image:</label>
+        <input type="file" name="image" accept=".png, .jpg, .jpeg, .gif, .bmp"><br>
+
+        <label for="watermark_text">Watermark Text:</label>
+        <input type="text" name="watermark_text" id="watermark-text" value="{{ watermark_text }}"><br>
+
+        <label for="text_color">Text Color:</label>
+        <input type="color" name="text_color" id="text-color" value="{{ text_color }}"><br>
+
+        <input type="hidden" name="watermark_x" id="watermark-x" value="0">
+        <input type="hidden" name="watermark_y" id="watermark-y" value="0">
+
+        <input type="submit" value="Add Watermark">
+    </form>
+
+    {% if img_str %}
+    <div id="watermarked-image-container">
+        <h2>Watermarked Image:</h2>
+        <div id="watermarked-image-wrapper">
+            <img id="watermarked-image" src="data:image/png;base64,{{ img_str }}" alt="Watermarked Image">
+            <div id="hovering-watermark" class="watermark-text">{{ watermark_text }}</div>
+        </div>
+        <button id="save-button">Save Watermarked Image</button>
+    </div>
+    {% endif %}
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{{ url_for('static', filename='assets/js/watermark.js') }}"></script>
+</body>
+</html>
