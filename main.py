@@ -7,7 +7,7 @@ import io
 import base64
 
 MY_EMAIL = "ajay20003kumar@gmail.com"
-MY_PASSWORD = "sddjrgqklkskdsul"
+MY_PASSWORD = os.environ.get("PASSWORD")
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = os.environ.get("FLASK_KEY")
@@ -184,11 +184,11 @@ def blog():
                     f"And he wants to say to you that:{message}"
             )
 
-
-        print(email)
-        print(website)
-        print(message)
-    print(id)
+    #
+    #     print(email)
+    #     print(website)
+    #     print(message)
+    # print(id)
 
     return render_template("blog-single.html", id=int(id))
 
