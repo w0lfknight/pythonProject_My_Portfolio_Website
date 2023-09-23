@@ -6,6 +6,7 @@ from PIL import Image, ImageDraw, ImageFont
 import io
 import base64
 
+
 MY_EMAIL = "ajay20003kumar@gmail.com"
 MY_PASSWORD = os.environ.get("PASSWORD")
 
