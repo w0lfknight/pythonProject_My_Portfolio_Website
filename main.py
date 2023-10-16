@@ -12,6 +12,7 @@ MY_EMAIL = "ajay20003kumar@gmail.com"
 MY_PASSWORD = os.environ.get("PASSWORD")
 
 app = Flask(__name__)
+mail = Mail(app)
 app.config['SECRET_KEY'] = os.environ.get("FLASK_KEY")
 app.config['MAIL-SERVER'] = "smtp.gmail.com"
 app.config["MAIL-PORT"] = 587
@@ -20,7 +21,7 @@ app.config['MAIL-USE-SLS'] = False
 app.config['MAIL-USERNAME'] = MY_EMAIL
 app.config['MAIL-PASSWORD'] = MY_PASSWORD
 
-mail = Mail(app)
+
 @app.route('/', methods=["POST", "GET"])
 def index():
     if request.method == "POST":
@@ -28,25 +29,27 @@ def index():
         email = request.form.get("email")
         subject = request.form.get("subject")
         message = request.form.get("message")
-        # with smtplib.SMTP("smtp.gmail.com") as connection:
-        #     connection.starttls()
-        #     connection.login(MY_EMAIL, MY_PASSWORD)
-        #     connection.sendmail(
-        #         from_addr=MY_EMAIL,
-        #         to_addrs=MY_EMAIL,
-        #
-        #         msg=f"Subject:This is the feed back you got from a user!\n\nHis name is:{name}\n "
-        #             f"His email is {email}\n"
-        #             f"His subject is {subject}\n"
-        #             f"And he wants to say to you that:{message}"
-        #     )
-        msg = Message(subject="This is the feedback you got froma user", body=f"His name is: {name}\n"
-                                                                              f"His email is: {email}\n"
-                                                                              f"His subject is: {subject}\n"
-                                                                              f"And he wants to say to you that: {message}",
-                      sender=email, recipients=['ajay20003kumar@gmail.com'])
-        mail.send(msg)
-        return render_template("index1.html", success=True)
+        with smtplib.SMTP("smtp.gmail.com") as connection:
+            connection.starttls()
+            connection.login(MY_EMAIL, MY_PASSWORD)
+            connection.sendmail(
+                from_addr=MY_EMAIL,
+                to_addrs=MY_EMAIL,
+
+                msg=f"Subject:This is the feed back you got from a user!\n\nHis name is:{name}\n "
+                    f"His email is {email}\n"
+                    f"His subject is {subject}\n"
+                    f"And he wants to say to you that:{message}"
+            )
+
+
+        # msg = Message(subject="This is the feedback you got froma user", body=f"His name is: {name}\n"
+        #                                                                       f"His email is: {email}\n"
+        #                                                                       f"His subject is: {subject}\n"
+        #                                                                       f"And he wants to say to you that: {message}",
+        #               sender=MY_EMAIL, recipients=['ajay20003kumar@gmail.com'])
+        # mail.send(msg)
+        # return render_template("index1.html", success=True)
     return render_template('index1.html')
 
 
